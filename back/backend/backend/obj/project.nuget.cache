@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DSKvAbRTN2IfgRql8161Tcv+9wXOGhRlQOn400vPkVDBe2Eq64AoBBdb/D6p8G2tKkw/iLtbvVxXWcU+o6oSzA==",
+  "dgSpecHash": "l09/2KchXeRRZjFLBb6C2AQ32UJ79lDENeJDYdYgSvOd1K1TiZt+iU2GE+sJyKYSvT8dUYvO4uxNI5Kq2z0c3g==",
   "success": true,
-  "projectFilePath": "C:\\projetos\\outros\\perguntaserespostas\\back\\backend\\backend\\backend.csproj",
+  "projectFilePath": "C:\\projetos\\Perguntas&Repostas\\back\\backend\\backend\\backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\christian.figueiredo\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\christian.figueiredo\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

@@ -11,7 +11,7 @@ namespace backend.Controllers
     public class UsuarioController : ControllerBase
     {
         private readonly IUsuarioService _usuarioService;
-       
+
         public UsuarioController(IUsuarioService usuarioService)
         {
             _usuarioService = usuarioService;
@@ -24,13 +24,19 @@ namespace backend.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(Usuario usuario)
+        public async Task<IActionResult> Post([FromBody] Usuario usuario)
         {
             try
             {
+                var validarUsuario = await _usuarioService.ValidarUsuario(usuario);
+
+                if (validarUsuario)
+                {
+                    return BadRequest(new { message = "Usuario " + usuario.Nome + " já existe!" });
+                }
                 await _usuarioService.SaveUser(usuario);
 
-                return Ok(new {message = "Usuário registrado com exito!"});
+                return Ok(new { message = "Usuário registrado com exito!" });
 
             }
             catch (Exception ex)
