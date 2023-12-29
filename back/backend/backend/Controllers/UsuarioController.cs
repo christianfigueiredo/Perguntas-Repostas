@@ -19,6 +19,7 @@ namespace backend.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
+            await Task.CompletedTask;
             return Ok("tudo certo");
         }
 
