@@ -9,11 +9,16 @@ namespace backend.Services
         private readonly IUsuarioRepository _usuarioRepository;
         public UsuarioService(IUsuarioRepository usuarioRepository)
         {
-            _usuarioRepository = usuarioRepository;            
+            _usuarioRepository = usuarioRepository;
         }
         public async Task SaveUser(Usuario usuario)
         {
             await _usuarioRepository.SaveUser(usuario);
         }
+        public async Task<bool> ValidarUsuario(Usuario usuario)
+        {
+            return await _usuarioRepository.ValidarUsuario(usuario);
+        }
+
     }
 }
