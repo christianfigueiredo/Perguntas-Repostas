@@ -1,0 +1,55 @@
+<div class="container">
+<div class="row" style="width: 100%;">
+    <div class="col-lg-6 offset-lg-3">
+        <div class="card text-center" style="padding: 10px;">
+        <h3>Trocar Senha</h3>
+        <form [formGroup]="trocarSenha" (ngSubmit)="trocar()">
+            <div class="form-group"  style="text-align: start;">
+                <input  
+                type="password"    
+                required="true"                                            
+                class="form-control" 
+                placeholder="Senha anterior" 
+                formControlName="senhaAnterior"> 
+                <span class="text-danger ml-3"
+                *ngIf="trocarSenha.get('senhaAnterior')?.hasError('required') && trocarSenha.get('senhaAnterior')?.touched">
+                    <strong>Senha anterior requerida</strong>
+                </span>                       
+            </div>
+            <div class="form-group"  style="text-align: start;">
+                <input type="password" class="form-control"
+                 placeholder="Senha nova" 
+                 formControlName="novaSenha" 
+                 [required]="true">
+                 <span class="text-danger ml-3"
+                    *ngIf="trocarSenha.get('novaSenha')?.hasError('required') && trocarSenha.get('novaSenha')?.touched">
+                    <strong>Nova senha requerida</strong>
+                </span> 
+                <span class="text-danger ml-3"
+                *ngIf="trocarSenha.get('novaSenha')?.hasError('minlength')">
+                A senha deve ter pelo menos <strong>6 caracteres</strong>
+                </span> 
+            </div>
+            <div class="form-group"  style="text-align: start;">
+                <input type="password" class="form-control"
+                 placeholder="Confirmar Senha" 
+                 formControlName="confirmaNovaSenha" 
+                 [required]="true">
+                 <span class="text-danger ml-3"
+                 *ngIf="trocarSenha.hasError('notSame')" >
+                    <strong>Senhas diferentes</strong>
+                 </span>
+            </div>            
+            <div class="form-group">
+                <button type="submit" 
+                class="btn btn-primary mr-2 btn-login" 
+                [disabled]="!trocarSenha.valid" >Entrar</button>
+
+                <button class="btn btn-outline-secondary" 
+                routerLink="/dashboard">Cancelar</button>
+            </div>           
+        </form>
+    </div>    
+</div>
+</div>
+</div>
